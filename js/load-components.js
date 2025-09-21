@@ -1,11 +1,11 @@
-fetch('/header.html')
+fetch('header.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('header-placeholder').innerHTML = data;
         mobileMenuToggle(); // Initialize mobile menu toggle after header is loaded
     });
 
-fetch('/footer.html')
+fetch('footer.html')
     .then(response => response.text())
     .then(data => {
         document.getElementById('footer-placeholder').innerHTML = data;
@@ -26,13 +26,13 @@ mobileMenuToggle = () => {
 
     menuLinks.forEach(link => {
         link.addEventListener('click', (event) => {
-            const isMainPage = window.location.pathname.startsWith('/index.html');
+            const isMainPage = window.location.pathname.startsWith('/web/index.html') || window.location.pathname.startsWith('/index.html');
             if (isMainPage) {
                 event.preventDefault();
             }
             closeMenu();
             if (isMainPage) {
-                document.querySelector(link.getAttribute('href').replace('/index.html','')).scrollIntoView({
+                document.querySelector(link.getAttribute('href').replace('index.html','')).scrollIntoView({
                     behavior: 'smooth'
                 });
             }
