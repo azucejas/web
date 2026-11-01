@@ -104,8 +104,17 @@ nav ul li a:hover {
 
 .menu-toggle {
     display: none;
+    background: none;
+    border: none;
+    color: var(--header-text);
     font-size: 1.5rem;
     cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: 20px;
+}
+
+.menu-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Hero Section */
@@ -335,7 +344,7 @@ footer {
 
     nav ul {
         position: fixed;
-        top: 70px;
+        top: var(--header-h, 70px);
         left: -100%;
         width: 90%;
         max-width: 90vw;
