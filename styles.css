@@ -5,9 +5,8 @@
 }
 
 :root {
-    --primary: #e8bfd4;
-    --secondary: #c9a8c2;
-    --accent: #a68ca9;
+    --accent: #6b5470;
+    --header-grad: linear-gradient(135deg, #7d5f85, #6b4e73);
     --light: #f8f4f9;
     --dark: #5a4a52;
     --text: #333333;
@@ -30,7 +29,7 @@ body {
 
 /* Header Styles */
 header {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: var(--header-grad);
     color: var(--text);
     padding: 1rem 0;
     position: sticky;
@@ -459,7 +458,7 @@ footer {
 }
 
 .comparativa-header {
-    background: linear-gradient(to right, var(--primary), var(--secondary));
+    background: var(--header-grad);
     padding: 1.5rem;
     text-align: center;
 }
@@ -523,4 +522,18 @@ footer {
 .localizaciones-texto {
     color: var(--accent);
     margin: 10px 0;
+}
+
+/* Accesibilidad: respeto a prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+        animation: none !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
 }
