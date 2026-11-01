@@ -116,6 +116,21 @@ nav ul li a:hover {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
+
+/* Navegación de reserva sin JavaScript */
+.noscript-nav {
+    background: var(--header-grad);
+    padding: 0.75rem 1rem;
+    text-align: center;
+}
+
+.noscript-nav a {
+    color: var(--header-text);
+    font-weight: 600;
+    text-decoration: none;
+    margin: 0 0.25rem;
+}
+
 /* Hero Section */
 .hero {
     background-image: url('img/slide-show/Irene_pincel_oscura.JPG');
