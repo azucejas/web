@@ -30,7 +30,6 @@ body {
 /* Header Styles */
 header {
     background: var(--header-grad);
-    color: var(--text);
     padding: 1rem 0;
     position: sticky;
     top: 0;
@@ -214,8 +213,8 @@ section {
     margin: 0 auto;
 }
 
-.tarjetas-regalo {
-    background: rgba(232, 191, 212, 0.9) !important;
+.entry-detail.tarjetas-regalo {
+    background: rgba(232, 191, 212, 0.9);
 }
 
 .services-grid {
@@ -224,21 +223,19 @@ section {
     gap: 2rem;
 }
 
+#tarjetas-regalo .services-grid {
+    grid-template-columns: repeat(auto-fit, 300px);
+    justify-content: center;
+}
+
 .service-card {
     background: white;
-    max-width: 318px;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
 }
 
-.transparent-card {
-    background: transparent;
-    max-width: 318px;
-    border-radius: 15px;
-    overflow: hidden;
-}
 
 .service-card:hover {
     transform: translateY(-10px);
@@ -443,7 +440,7 @@ footer {
 }
 
 .entry-detail h1 {
-    font-size: 2.rem;
+    font-size: 2rem;
     color: var(--accent);
     margin-bottom: 20px;
     text-align: center;
@@ -492,7 +489,6 @@ footer {
 
 .comparativa-header h3 {
     color: white;
-    font-family: 'Playfair Display', serif;
     font-size: 1.8rem;
     margin: 0;
 }
@@ -530,7 +526,8 @@ footer {
     border-top: 1px solid #eee;
 }
 
-.localizaciones-img {
+.localizaciones-img,
+.agradecimientos-img {
     width: 100%;
     max-width: 90vw;
     object-fit: cover;
@@ -538,12 +535,8 @@ footer {
     margin-bottom: 10px;
 }
 
-.agradecimientos-img {
-    width: 100%;
-    max-width: 90vw;
-    object-fit: cover;
-    border-radius: 15px;
-    margin-bottom: 10px;
+#personal .container > p {
+    margin-bottom: 1.25rem;
 }
 
 .localizaciones-texto {
