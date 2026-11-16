@@ -349,6 +349,19 @@ footer {
 }
 
 /* Responsive Design */
+/* Tramo intermedio: el menú horizontal de 6 ítems desborda por debajo de
+   ~1200px (scrollbar horizontal); se compacta hasta que activa el hamburger (768px) */
+@media (max-width: 1180px) {
+    nav ul li {
+        margin-left: 0.5rem;
+    }
+
+    nav ul li a {
+        padding: 0.5rem 0.6rem;
+        font-size: 1rem;
+    }
+}
+
 @media (max-width: 768px) {
     .menu-toggle {
         display: block;
@@ -566,13 +579,29 @@ footer {
     border-top: 1px solid #eee;
 }
 
-.localizaciones-img,
-.agradecimientos-img {
+.localizaciones-img {
     width: 100%;
     max-width: 90vw;
     object-fit: cover;
     border-radius: 15px;
     margin-bottom: 10px;
+}
+
+/* Corazón de agradecimientos: escala progresiva según pantalla.
+   min() de dos rectas que se cruzan en los anclajes: 100% en móvil,
+   75% en 1024px, 50% en 1920px, ~43% en 2560px, ~36% en 3840px. */
+.agradecimientos-img {
+    display: block;
+    margin: 0 auto 10px;
+    width: 100%;
+    width: min(
+        100%,
+        480px + (100vw - 480px) * 0.529,
+        768px + (100vw - 1024px) * 0.211
+    );
+    max-width: 100%;
+    object-fit: cover;
+    border-radius: 15px;
 }
 
 #personal .container > p {
