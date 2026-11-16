@@ -588,8 +588,8 @@ footer {
 }
 
 /* Corazón de agradecimientos: escala progresiva según pantalla.
-   min() de dos rectas que se cruzan en los anclajes: 100% en móvil,
-   75% en 1024px, 50% en 1920px, ~43% en 2560px, ~36% en 3840px. */
+   min() de tres rectas que se cruzan en los anclajes: 100% en móvil,
+   75% en 1024px, 50% en 1920px, ~33% en 2560px, 640px en 3840px (suelo 480px). */
 .agradecimientos-img {
     display: block;
     margin: 0 auto 10px;
@@ -597,7 +597,8 @@ footer {
     width: min(
         100%,
         480px + (100vw - 480px) * 0.529,
-        768px + (100vw - 1024px) * 0.211
+        768px + (100vw - 1024px) * 0.211,
+        max(480px, 960px - (100vw - 1920px) * 0.1667)
     );
     max-width: 100%;
     object-fit: cover;
