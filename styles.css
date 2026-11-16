@@ -588,8 +588,11 @@ footer {
 }
 
 /* Corazón de agradecimientos: escala progresiva según pantalla.
-   min() de tres rectas que se cruzan en los anclajes: 100% en móvil,
-   75% en 1024px, 50% en 1920px, ~33% en 2560px, 640px en 3840px (suelo 480px). */
+   min() de rectas que se cruzan en los anclajes: 100% en móvil, 75% en
+   1024px, 50% en 1920px. A partir de 1920px el ancho se FIJA en 960px:
+   el px CSS es una unidad física (1px = 1/96''), así 960px ≈ 25,4 cm
+   tanto en el 24" 1080p como en pantallas mayores bien escaladas — el
+   corazón mantiene su tamaño real y ocupa cada vez menos % de la página. */
 .agradecimientos-img {
     display: block;
     margin: 0 auto 10px;
@@ -598,7 +601,7 @@ footer {
         100%,
         480px + (100vw - 480px) * 0.529,
         768px + (100vw - 1024px) * 0.211,
-        max(480px, 960px - (100vw - 1920px) * 0.1667)
+        960px
     );
     max-width: 100%;
     object-fit: cover;
